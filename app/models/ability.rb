@@ -1,6 +1,8 @@
 class Ability
   include CanCan::Ability
 
+  # THIS NEEDS TO BE ALTERED
+
   def initialize(user)
     if user.has_role? :admin
         can :manage, :all
