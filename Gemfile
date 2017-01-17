@@ -38,6 +38,12 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 # Devise Gem For User Auth
 gem 'devise'
 
+# authorization library
+gem 'cancan'
+
+# Roles library
+gem 'rolify'
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
