@@ -4,9 +4,13 @@ class Ability
   # THIS NEEDS TO BE ALTERED
 
   def initialize(user)
-    if user.has_role? :admin
+    if user.player.nil?
+        # Set permissions for players
+            # Can only edit current user
+            # can sign up for games
         can :manage, :all
     else
+        can manage 
         can :read, :all
     end
     # Define abilities for the passed in user here. For example:

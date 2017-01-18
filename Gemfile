@@ -50,6 +50,9 @@ group :development, :test do
 
   # Gem Pry for testing
   gem 'pry'
+
+  # gem faker for fake seeding data
+  gem 'faker'
 end
 
 group :development do
