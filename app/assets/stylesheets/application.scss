@@ -8,3 +8,18 @@ h1 {
 		color:red;
 	}
 }
+
+.example3 {
+	.navbar-brand {
+		line-height: 1.5em;
+		font-size: 2em;
+	}
+	.nav >li >a {
+		padding-top: 30px;
+  		padding-bottom: 30px;
+	}
+	.navbar-toggle {
+		padding: 10px;
+  		margin: 25px 15px 25px 0;
+	}
+}
