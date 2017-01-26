@@ -1,0 +1,2 @@
+class RinksController < ApplicationController
+end
