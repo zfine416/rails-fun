@@ -56,9 +56,9 @@ class Users::RegistrationsController < Devise::RegistrationsController
 
   # The path used after sign up.
   def after_sign_up_path_for(resource)
-    binding.pry
-    (resource.role == "player") ? redirect_to() : redirect_to()
-    super(resource)
+    # binding.pry
+    return (resource.role == "player") ? new_player_url : new_rink_url
+    # super(resource)
   end
 
   # The path used after sign up for inactive accounts.

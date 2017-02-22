@@ -1,0 +1,12 @@
+/ t.string :country, :address, :city, :zip, :state_province, :phone
+/ t.references :user
+%h2 Rink Information
+= simple_form_for @rink, :html => {:class => 'main-form'} do |f| 
+  = f.input :country, as: :select, :collection => ['United States', 'Canada']
+  = f.input :address
+  = f.input :city
+  = f.input :zip
+  = f.input :state_province
+  = f.input :phone
+  = f.button :submit
+
