@@ -13,6 +13,15 @@
 //= require jquery
 //= require jquery_ujs
 //= require jquery
+//= require jquery-ui/widgets/datepicker
 //= require bootstrap-sprockets
 //= require turbolinks
+//= require react
+//= require react_ujs
+//= require components
 //= require_tree .
+
+$( function() {
+	console.log('app.js')
+    $( "#datepicker" ).datepicker();
+ } );
