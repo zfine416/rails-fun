@@ -1,0 +1,7 @@
+%h2 Player Information
+= simple_form_for @player, :html => {:class => 'main-form'} do |f|
+  .form-group 
+    = f.input :name
+    = f.input :position, collection: @positions
+    = f.input :bio
+    = f.button :submit
