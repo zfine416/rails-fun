@@ -1,7 +1,9 @@
 /*"bootstrap-sprockets" must be imported before "bootstrap" and "bootstrap/variables"*/
 @import "bootstrap-sprockets";
 @import "bootstrap";
-@import "jquery-ui";
+@import 'jquery-ui';
+@import 'date-picker.css';
+
 
 h1 {
 	color: green;
@@ -31,3 +33,5 @@ h1 {
 	min-width: 300px;
 	margin: 0 auto;
 }
+
+.ui-datepicker { font-size: 9pt !important; }
