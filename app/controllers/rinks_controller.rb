@@ -6,6 +6,12 @@ class RinksController < ApplicationController
     @rinks = Rink.all
   end
 
+  def search
+    zip = params[:zip]
+    @rinks = Rink.near(zip , 20)
+    render json: @rinks, serializer_params: :latitude
+  end
+
   # GET /rinks/1
   # GET /rinks/1.json
   def show
@@ -69,7 +75,6 @@ class RinksController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def rink_params
       params[:rink][:user_id] = current_user.id
-      params.require(:rink).permit(:name, :bio, :user_id)
+      params.require(:rink).permit(:country, :address, :city, :zip, :state_province, :phone)
     end
-
 end
