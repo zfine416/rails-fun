@@ -36,6 +36,11 @@ gem 'country_select'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
+# geocoding solution for Ruby
+gem 'geocoder'
+
+gem "sprockets", '3.6.3'
+
 # Use Unicorn as the app server
 # gem 'unicorn'
 

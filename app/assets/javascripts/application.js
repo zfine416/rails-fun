@@ -1,4 +1,6 @@
 //= require_self
+//= require jquery
+//= require bootstrap-sprockets
 //= require react-server
 //= require react_ujs
 
