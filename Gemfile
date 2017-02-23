@@ -44,6 +44,10 @@ gem 'country_select'
 
 # add react to Rails project
 gem 'react-rails'
+# browserify for adding common JavaScript modules (npm)
+gem 'browserify-rails', '1.5.0'
+
+gem 'babel-transpiler'
 
 # Devise Gem For User Auth
 gem 'devise'

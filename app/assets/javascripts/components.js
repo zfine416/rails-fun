@@ -1,1 +1,3 @@
-//= require_tree ./components
+require( 'babel-polyfill' );
+
+global.Players = require( 'components/Players' ).default;
