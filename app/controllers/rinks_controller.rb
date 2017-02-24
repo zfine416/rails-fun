@@ -9,7 +9,14 @@ class RinksController < ApplicationController
   def search
     zip = params[:zip]
     @rinks = Rink.near(zip , 20)
-    render json: @rinks, serializer_params: :latitude
+    binding.pry
+    @games = @rinks.map do |rink|
+      rink.games.map do |game|
+        game.schedule
+      end
+    end
+    # binding.pry
+    render json: @games, serializer_params: :latitude
   end
 
   # GET /rinks/1

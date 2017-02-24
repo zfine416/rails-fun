@@ -1,0 +1,7 @@
+= simple_form_for @game, :url => rink_games_path, :method => :post, html: { class: 'main-form' } do |f|
+  .field
+    = f.input :duration
+  .field
+    = f.input :schedule, as: :schedule
+  .actions
+    = f.submit

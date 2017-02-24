@@ -63,6 +63,10 @@ gem 'cancan'
 # Roles library
 gem 'rolify'
 
+# Scheduling gem for handling recurring games
+gem 'ice_cube'
+gem 'schedulable'
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
