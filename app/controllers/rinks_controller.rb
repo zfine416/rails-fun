@@ -9,14 +9,12 @@ class RinksController < ApplicationController
   def search
     zip = params[:zip]
     @rinks = Rink.near(zip , 20)
-    binding.pry
     @games = @rinks.map do |rink|
       rink.games.map do |game|
-        game.schedule
+        game.game_occurrences
       end
     end
-    # binding.pry
-    render json: @games, serializer_params: :latitude
+    render json: @games[0][0].includes(:schedulable).map { |schedule| schedule.as_json.merge({rink_data: schedule.schedulable.rink.as_json}) }
   end
 
   # GET /rinks/1

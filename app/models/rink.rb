@@ -1,6 +1,7 @@
 class Rink < ActiveRecord::Base
 	belongs_to :user
 	has_many :games
+	has_many :game_occurrences, through: :games
 	geocoded_by :full_street_address 
 	after_validation :geocode, :if => :full_street_address_changed?
 	attr_accessor :full_street_address
