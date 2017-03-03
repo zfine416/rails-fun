@@ -11,27 +11,33 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170223200614) do
+ActiveRecord::Schema.define(version: 20170224200649) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
+  create_table "game_occurrences", force: :cascade do |t|
+    t.integer  "schedulable_id"
+    t.string   "schedulable_type"
+    t.datetime "date"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "game_occurrences_players", id: false, force: :cascade do |t|
+    t.integer "game_occurrence_id"
+    t.integer "player_id"
+  end
+
+  add_index "game_occurrences_players", ["game_occurrence_id"], name: "index_game_occurrences_players_on_game_occurrence_id", using: :btree
+  add_index "game_occurrences_players", ["player_id"], name: "index_game_occurrences_players_on_player_id", using: :btree
+
   create_table "games", force: :cascade do |t|
-    t.date     "date"
-    t.time     "start_time"
     t.integer  "duration"
     t.integer  "rink_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
-
-  create_table "games_players", id: false, force: :cascade do |t|
-    t.integer "game_id"
-    t.integer "player_id"
-  end
-
-  add_index "games_players", ["game_id"], name: "index_games_players_on_game_id", using: :btree
-  add_index "games_players", ["player_id"], name: "index_games_players_on_player_id", using: :btree
 
   create_table "players", force: :cascade do |t|
     t.string   "name"
@@ -66,6 +72,21 @@ ActiveRecord::Schema.define(version: 20170223200614) do
 
   add_index "roles", ["name", "resource_type", "resource_id"], name: "index_roles_on_name_and_resource_type_and_resource_id", using: :btree
   add_index "roles", ["name"], name: "index_roles_on_name", using: :btree
+
+  create_table "schedules", force: :cascade do |t|
+    t.integer  "schedulable_id"
+    t.string   "schedulable_type"
+    t.date     "date"
+    t.time     "time"
+    t.string   "rule"
+    t.string   "interval"
+    t.text     "day"
+    t.text     "day_of_week"
+    t.datetime "until"
+    t.integer  "count"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false

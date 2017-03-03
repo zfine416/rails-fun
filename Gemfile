@@ -8,6 +8,7 @@ gem 'pg', '~> 0.15'
 # Use SCSS for stylesheets
 gem 'bootstrap-sass', '~> 3.3.6'
 gem 'sass-rails', '>= 3.2'
+
 # Use HAML for views
 gem 'haml'
 # Use Uglifier as compressor for JavaScript assets
@@ -47,12 +48,6 @@ gem "sprockets", '3.6.3'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
-# add react to Rails project
-gem 'react-rails'
-# browserify for adding common JavaScript modules (npm)
-gem 'browserify-rails', '1.5.0'
-
-gem 'babel-transpiler'
 
 # Devise Gem For User Auth
 gem 'devise'
@@ -63,6 +58,10 @@ gem 'cancan'
 # Roles library
 gem 'rolify'
 
+# Scheduling gem for handling recurring games
+gem 'ice_cube'
+gem "schedulable", github: 'benignware/schedulable'
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
@@ -72,6 +71,8 @@ group :development, :test do
 
   # gem faker for fake seeding data
   gem 'faker'
+
+  gem 'better_errors'
 end
 
 group :development do

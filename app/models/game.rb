@@ -1,4 +1,5 @@
 class Game < ActiveRecord::Base
 	belongs_to :rink
-	has_and_belongs_to_many :players
+	has_many :game_occurrences
+	acts_as_schedulable :schedule, occurrences: :game_occurrences
 end
