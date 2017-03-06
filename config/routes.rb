@@ -11,6 +11,7 @@ Rails.application.routes.draw do
   end
 
   get 'rinks/search/:zip' => 'rinks#search'
+  get 'upcoming' => 'welcome#upcoming'
   
 end
 
@@ -56,3 +57,4 @@ end
 #                          PUT    /rinks/:id(.:format)                     rinks#update
 #                          DELETE /rinks/:id(.:format)                     rinks#destroy
 #                          GET    /rinks/search/:zip(.:format)             rinks#search
+#                 upcoming GET    /upcoming(.:format)                      welcome#upcoming

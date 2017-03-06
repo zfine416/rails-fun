@@ -1,9 +1,10 @@
-%header
-	.container
-		.intro-text
-			.intro-lead-in Welcome To Our Studio!
-			%form
-			/ create a form the queries game occurence based on address and date entered	
-			%a.page-scroll.btn.btn-xl{:href => "#services"} Tell Me More
-
-
+%section.main
+	%header
+	.overlay
+		.container
+			.intro-text
+				.intro-lead-in Welcome To Our Studio!
+				= form_tag upcoming_path, :method => 'get' do
+					= text_field_tag 'datepicker', params[:date]
+					= text_field_tag :address, params[:address]
+					= submit_tag "Search", :name => nil

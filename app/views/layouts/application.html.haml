@@ -8,15 +8,17 @@
     %meta{:content => "user-scalable=no, initial-scale=1.0, maximum-scale=1.0", :name => "viewport"}
     %link{:href => "https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"}
   %body
-    - if(user_signed_in?) 
-      %nav#mainNav.navbar.navbar-default.navbar-custom.navbar-fixed-top
-        .container
-          .navbar-header.page-scroll
-            %button.navbar-toggle{"data-target" => "#bs-example-navbar-collapse-1", "data-toggle" => "collapse", :type => "button"}
-              %span.sr-only Toggle navigation Menu
-              %i.fa.fa-bars
-            %a.navbar-brand.page-scroll{:href => "#page-top"} openHockey
-          #bs-example-navbar-collapse-1.collapse.navbar-collapse
+    %nav.navbar.navbar-inverse.navbar-static-top
+      .container
+        .navbar-header
+          %button.navbar-toggle.collapsed{"data-target" => "#navbar3", "data-toggle" => "collapse", :type => "button"}
+            %span.sr-only Toggle navigation
+            %span.icon-bar
+            %span.icon-bar
+            %span.icon-bar
+          %a.navbar-brand OpenHockey
+        - if(user_signed_in?)
+          #navbar3.navbar-collapse.collapse
             %ul.nav.navbar-nav.navbar-right
               %li.hidden
                 %a{:href => "#page-top"}
@@ -29,16 +31,9 @@
               %li
                 %a{:href => "#"} About
               %li
-                %a.page-scroll{:href => "#contact"} Contact           
-    - else
-      %nav#mainNav.navbar.navbar-default.navbar-custom.navbar-fixed-top
-        .container
-          .navbar-header.page-scroll
-            %button.navbar-toggle{"data-target" => "#bs-example-navbar-collapse-1", "data-toggle" => "collapse", :type => "button"}
-              %span.sr-only Toggle navigation Menu
-              %i.fa.fa-bars
-            %a.navbar-brand.page-scroll{:href => "#page-top"} openHockey
-          #bs-example-navbar-collapse-1.collapse.navbar-collapse
+                %a.page-scroll{:href => "#contact"} Contact
+        - else
+          #navbar3.navbar-collapse.collapse
             %ul.nav.navbar-nav.navbar-right
               %li.hidden
                 %a{:href => "#page-top"}
@@ -63,7 +58,7 @@
               %li
                 %a{:href => "#"} About
               %li
-                %a.page-scroll{:href => "#contact"} Contact                
+                %a.page-scroll{:href => "#contact"} Contact
 
     - if notice
       %p.alert.alert-success= notice
