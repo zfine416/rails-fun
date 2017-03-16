@@ -8,13 +8,14 @@ class RinksController < ApplicationController
 
   def search
     zip = params[:zip]
+    date = Date.parse(params[:date])
     @rinks = Rink.near(zip , 20)
     @games = @rinks.map do |rink|
       rink.games.map do |game|
         game.game_occurrences
       end
     end
-    render json: @games[0][0].includes(:schedulable).map { |schedule| schedule.as_json.merge({rink_data: schedule.schedulable.rink.as_json}) }
+    render json: @games[0][0].includes(:schedulable).select { |occurr| occurr.date > date}.map { |schedule| schedule.as_json.merge({rink_data: schedule.schedulable.rink.as_json}) }
   end
 
   # GET /rinks/1
