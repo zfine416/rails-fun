@@ -1,0 +1,86 @@
+.navbar-custom {
+  background-color: #222222;
+  border-color: transparent;
+  .navbar-brand {
+    color: #fed136;
+    font-family: "Kaushan Script", "Helvetica Neue", Helvetica, Arial, cursive;
+    &:hover, &:focus, &:active, &.active {
+      color: #fec503;
+    }
+  }
+  .navbar-collapse {
+    border-color: rgba(255, 255, 255, 0.02);
+  }
+  .navbar-toggle {
+    background-color: #fed136;
+    border-color: #fed136;
+    font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    text-transform: uppercase;
+    color: white;
+    font-size: 12px;
+    &:hover, &:focus {
+      background-color: #fed136;
+    }
+  }
+  .nav li a {
+    font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    text-transform: uppercase;
+    font-weight: 600;
+    letter-spacing: 1px;
+    color: #000;
+    &:hover, &:focus {
+      color: #fed136;
+      outline: none;
+    }
+  }
+  .navbar-nav > .active > a {
+    border-radius: 0;
+    color: white;
+    background-color: #fed136;
+    &:hover, &:focus {
+      color: white;
+      background-color: #fec503;
+    }
+  }
+}
+
+.navbar {
+  margin-bottom: 0px;
+}
+
+@media (min-width: 768px) {
+  .navbar-custom {
+    background-color: transparent;
+    padding: 25px 0;
+    -webkit-transition: padding 0.3s;
+    -moz-transition: padding 0.3s;
+    transition: padding 0.3s;
+    border: none;
+    .navbar-brand {
+      font-size: 2em;
+      -webkit-transition: all 0.3s;
+      -moz-transition: all 0.3s;
+      transition: all 0.3s;
+    }
+    .navbar-nav > .active > a {
+      border-radius: 3px;
+    }
+  }
+}
+
+@media (min-width: 768px) {
+  .navbar-custom.affix {
+    background-color: #222222;
+    padding: 10px 0;
+    .navbar-brand {
+      font-size: 1.5em;
+    }
+  }
+}
+
+.main-form {
+	padding-top: 2.5em;
+	width: 33%;
+	min-width: 300px;
+	margin: 0 auto;
+}

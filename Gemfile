@@ -9,6 +9,9 @@ gem 'pg', '~> 0.15'
 gem 'bootstrap-sass', '~> 3.3.6'
 gem 'sass-rails', '>= 3.2'
 
+# flexible sass grid
+gem 'neat'
+
 # Use HAML for views
 gem 'haml'
 # Use Uglifier as compressor for JavaScript assets

@@ -10,7 +10,9 @@ Rails.application.routes.draw do
     resources :games
   end
 
-  get 'rinks/search/:zip' => 'rinks#search'
+  get 'rinks/search/:zip/:date' => 'rinks#search'
+  get 'games/search/:zip/:date' => 'games#search'
+  get 'upcoming' => 'welcome#upcoming'
   
 end
 
@@ -56,3 +58,4 @@ end
 #                          PUT    /rinks/:id(.:format)                     rinks#update
 #                          DELETE /rinks/:id(.:format)                     rinks#destroy
 #                          GET    /rinks/search/:zip(.:format)             rinks#search
+#                 upcoming GET    /upcoming(.:format)                      welcome#upcoming

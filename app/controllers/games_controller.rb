@@ -17,6 +17,18 @@ class GamesController < ApplicationController
     @game = Game.new
   end
 
+  def search
+    zip = params[:zip]
+    @rinks = Rink.near(zip , 20)
+    today = Date.today
+    @games = @rinks.map do |rink|
+      rink.games.map do |game|
+        game.game_occurrences
+      end
+    end
+    render json: @games[0][0].includes(:schedulable).select { |occurr| occurr.date > today}.map { |schedule| schedule.as_json.merge({rink_data: schedule.schedulable.rink.as_json}) }
+  end
+
   # GET /games/1/edit
   def edit
   end
